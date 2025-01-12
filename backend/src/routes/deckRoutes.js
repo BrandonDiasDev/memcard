@@ -4,14 +4,8 @@ const Deck = require("../models/Deck");
 const router = express.Router();
 
 // Criar deck
-router.post("/", async (req, res) => {
-  try {
-    const deck = await Deck.create(req.body);
-    res.status(201).json(deck);
-  } catch (err) {
-    res.status(400).json({ error: err.message });
-  }
-});
+const createDeck = require("../controllers/deckController");
+router.post('/', createDeck);
 
 // Listar decks
 router.get("/", async (req, res) => {

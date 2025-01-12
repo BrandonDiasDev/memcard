@@ -8,7 +8,7 @@ const createUser = async (req, res) => {
 
     // Verifica se todos os campos estão preenchidos
     if (!name || !email || !password) {
-      return res.status(400).json({ error: "Todos os campos são obrigatórios" });
+      return res.status(400).json({ error: "Criando Usuários: Todos os campos são obrigatórios!" });
     }
 
     // Gera o hash da senha
