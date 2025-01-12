@@ -8,7 +8,7 @@ const createDeck = async (req, res) => {
   
       // Verifica se todos os campos estão preenchidos
       if (!name || !user_id) {
-        return res.status(400).json({ error: "Todos os campos são obrigatórios" });
+        return res.status(400).json({ error: "Deck creation: Todos os campos são obrigatórios" });
       }
   
       // Cria o usuário no banco de dados
@@ -17,11 +17,11 @@ const createDeck = async (req, res) => {
         user_id,
       });
   
-      // Retorna o usuário criado
+      // Retorna o deck criado
       res.status(201).json({
         id: newDeck.id,
         name: newDeck.name,
-        email: newDeck.user_id,
+        user_id: newDeck.user_id,
         message: "Deck criado com sucesso!",
       });
     } catch (error) {
