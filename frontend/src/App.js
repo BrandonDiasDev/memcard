@@ -1,12 +1,21 @@
 import React from 'react';
-import Example from './components/Example';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import Login from "./components/Login";
+import Register from "./components/Register";
+import Dashboard from "./components/Dashboard";
+import ReviewCards from "./components/ReviewCards";
 
 function App() {
   return (
-    <div>
-      <h1>MemCard</h1>
-      <Example />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/review/:deckId" element={<ReviewCards />} />
+      </Routes>
+    </Router>
   );
 }
 
