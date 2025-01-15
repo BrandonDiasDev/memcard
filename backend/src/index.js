@@ -41,7 +41,7 @@ app.listen(PORT, () => {
 const sequelize = require("./config/database.js");
 
 // Sincronizar o banco de dados
-sequelize.sync({ force: true }) // force: true recria as tabelas sempre que o servidor é reiniciado.
+sequelize.sync({ force: false }) // force: true recria as tabelas sempre que o servidor é reiniciado.
   .then(() => {
     console.log("Tables created!");
   })
