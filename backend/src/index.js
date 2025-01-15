@@ -18,8 +18,8 @@ app.get("/", (req, res) => {
 });
 
 // Routes
-const routes = require('./routes');
-app.use('/api', routes);
+const routes = require("./routes");
+app.use("/api", routes);
 
 const userRoutes = require("./routes/userRoutes.js");
 app.use("/api/users", userRoutes);
@@ -29,6 +29,9 @@ app.use("/api/decks", deckRoutes);
 
 const cardRoutes = require("./routes/cardRoutes");
 app.use("/api/cards", cardRoutes);
+
+const authRoutes = require("./routes/authRoutes");
+app.use("/api", authRoutes);
 
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
